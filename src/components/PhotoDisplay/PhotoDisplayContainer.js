@@ -1,13 +1,19 @@
 import React from 'react';
+import PhotoDisplayCard from './PhotoDisplayCard';
 
-function PhotoDisplayContainer () {
+function PhotoDisplayContainer (props) {
 
     return (
-        <div>
-            <p>photo 1</p>
-            <p>photo 2</p>
-            <p>photo 3</p>
-            <p>photo 4</p>
+        <div className="photo-grid">
+            {props.pics.map((pic) => {
+                return <PhotoDisplayCard
+                key={pic}
+                url={props.url}
+                blurb={props.blurb}
+                date={props.date}
+                title={props.title}
+                copyright={props.copyright}/>
+            })}
         </div>
     )
 }
