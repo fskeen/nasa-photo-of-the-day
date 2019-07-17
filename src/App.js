@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
+// Component imports
+import Header from "../src/components/Header"
+import PhotoDisplayContainer from "./components/PhotoDisplay/PhotoDisplayContainer";
 
 function App() {
+
+  const [photos, setPhotos] = useState([]) 
+
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <Header />
+      <PhotoDisplayContainer />
     </div>
   );
 }
